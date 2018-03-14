@@ -1,0 +1,42 @@
+﻿<Window x:Class="biathlon.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Biathlon" Height="350" Width="1000" x:Name="biathlon">
+  <Grid x:Name="f">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="75"/>
+      <ColumnDefinition Width="75"/>
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Button   x:Name="prepare" Content="Prepare" 
+              Height="30" Width="75"/>
+    <Button   x:Name="start" Content="Start" 
+              Height="30" Width="75"
+              Grid.Column="1" />
+    <DataGrid x:Name="resGrid" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualWidth}" 
+              Grid.Row="1" Grid.ColumnSpan="4" 
+              AutoGenerateColumns="False" IsReadOnly="True">
+    </DataGrid>
+
+    <Grid x:Name="rangeGrid" 
+          Grid.Row="2" Grid.Column="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="15"/>
+        <RowDefinition Height="15"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="15"/>
+        <ColumnDefinition Width="15"/>
+        <ColumnDefinition Width="15"/>
+        <ColumnDefinition Width="15"/>
+        <ColumnDefinition Width="15"/>
+      </Grid.ColumnDefinitions>
+    </Grid>
+  </Grid>
+</Window>
